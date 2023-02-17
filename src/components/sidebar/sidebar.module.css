@@ -1,0 +1,13 @@
+h2, h3 {
+    font-size: var(--font-size-p);
+    font-weight: 600;
+    color: var(--blue);
+}
+.sidebar {
+    width: 8.75rem;
+    background-color: var(--white);
+    height: 100vh;
+}
+.profile {
+    padding: 1.25rem ;
+}

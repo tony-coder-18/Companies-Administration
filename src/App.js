@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import Sidebar from './components/sidebar/sidebar';
+import Companies from './routes/companies';
+// import ErrorPage from './error-page';
+import People from './routes/people';
+import CompanyForm from './components/company-form/company-form';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='main-app'>
+      <Sidebar />
+
+      <main className="main-content">
+        <div className='container'>
+          <Routes>
+            <Route path='/' element={<Companies />}  />
+            <Route path='/add-company' element={<CompanyForm />} />
+            <Route path='/people' element={<People />} />
+          </Routes>
+        </div>
+      </main>
     </div>
   );
 }
